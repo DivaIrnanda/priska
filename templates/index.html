@@ -2077,6 +2077,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+fetch("/.netlify/functions/predict", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    x1:1,x2:0,x3:2,x4:1,x5:0,
+    x6:1,x7:2,x8:1,x9:0,x10:1
+  })
+})
+.then(res => res.json())
+.then(data => {
+  console.log(data);
+});
+
 
 
     </script>
